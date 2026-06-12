@@ -43,7 +43,6 @@ set(
   "List of components to include"
   )
 
-# TODO: update this with your project's name
-project(template)
+project(espp_bldc_test)
 
 set(CMAKE_CXX_STANDARD 20)
