@@ -16,19 +16,17 @@ extern "C" void app_main(void) {
   std::atomic<int> counter = 0;
 
   // make a simple task that prints "Hello World!" every second
-  espp::Task task({
-      .callback = [&](auto &m, auto &cv) -> bool {
-        logger.debug("[{}] Hello from the task!", counter++);
-        std::unique_lock<std::mutex> lock(m);
-        cv.wait_for(lock, 1s);
-        // we don't want to stop the task, so return false
-        return false;
-      },
-        .task_config = {
-          .name = "Hello World",
-          .stack_size_bytes = 4096,
-        }
-    });
+  espp::Task task({.callback = [&](auto &m, auto &cv) -> bool {
+                     logger.debug("[{}] Hello from the task!", counter++);
+                     std::unique_lock<std::mutex> lock(m);
+                     cv.wait_for(lock, 1s);
+                     // we don't want to stop the task, so return false
+                     return false;
+                   },
+                   .task_config = {
+                       .name = "Hello World",
+                       .stack_size_bytes = 4096,
+                   }});
   task.start();
 
   // also print in the main thread
