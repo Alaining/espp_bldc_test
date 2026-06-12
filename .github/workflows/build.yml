@@ -3,6 +3,10 @@ name: Build
 # TODO: update if you want to allow from forked repositories
 on: [pull_request]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 env:
   # TODO: Update the below variables for your project
   APP_NAME: "espp_bldc_test"

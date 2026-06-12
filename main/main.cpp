@@ -35,3 +35,5 @@ extern "C" void app_main(void) {
     std::this_thread::sleep_for(1s);
   }
 }
+
+// Test static analysis
