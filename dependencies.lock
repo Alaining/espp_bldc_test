@@ -54,11 +54,11 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.4.3
+    version: 6.0.0
 direct_dependencies:
 - espp/logger
 - espp/task
 - idf
 manifest_hash: 16d7e3712170468f60367e4e08089e68e22a2fe04e08f430308cd816b8038e12
 target: esp32s3
-version: 2.0.0
+version: 3.0.0
